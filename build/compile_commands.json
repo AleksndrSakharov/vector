@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/s23380346@unn.global/Sakharov/3823B1FI3/vector/build",
+  "command": "/usr/bin/g++-12    -fsanitize=address -g -o CMakeFiles/main.dir/main.cpp.o -c /home/s23380346@unn.global/Sakharov/3823B1FI3/vector/main.cpp",
+  "file": "/home/s23380346@unn.global/Sakharov/3823B1FI3/vector/main.cpp"
+},
+{
+  "directory": "/home/s23380346@unn.global/Sakharov/3823B1FI3/vector/build",
+  "command": "/usr/bin/g++-12    -fsanitize=address -g -o CMakeFiles/main.dir/Vector.cpp.o -c /home/s23380346@unn.global/Sakharov/3823B1FI3/vector/Vector.cpp",
+  "file": "/home/s23380346@unn.global/Sakharov/3823B1FI3/vector/Vector.cpp"
+}
+]
