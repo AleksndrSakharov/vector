@@ -44,6 +44,58 @@ public:
         delete [] _array;
     }
 
+    Vector operator+(const Vector& vec) const{
+        if (_size != vec._size) throw "Error";
+        T* array = new T[vec._size];
+        for (int i = 0; i < _size; i++){
+            array[i] = _array[i] + vec._array[i];
+        }
+        auto v = Vector(_size, array);
+        delete [] array;
+        return v;
+    }
+
+    Vector operator-(const Vector& vec) const{
+        if (_size != vec._size) throw "Error";
+        T* array = new T[vec._size];
+        for (int i = 0; i < _size; i++){
+            array[i] = _array[i] - vec._array[i];
+        }
+        auto v = Vector(_size, array);
+        delete [] array;
+        return v;
+    }
+
+    T scalarMultiply(Vector& vec2){
+        if (_size != vec2._size) return 0;
+        T res = 0;
+        for (int i = 0; i < _size; i++){
+            res += _array[i] * vec2._array[i];
+        }
+        // delete [] vec2._array;
+        return res;
+    }
+
+    double findLength(){
+        double length = 0;
+        for (int i = 0; i < _size; i++){
+            length += _array[i] * _array[i];
+        }
+        length = pow(length, 0.5);
+        return length;
+    }
+
+    Vector normalization(){
+        T* array = new T[_size];
+        size_t size = _size;
+        for (int i = 0; i < _size; i++){
+            array[i] = _array[i] / this->findLength();
+        }
+        auto v = Vector(_size, array);
+        delete [] array;
+        return v;
+    }
+
     const T& operator[](int index) const{
         return _array[index];
     }
