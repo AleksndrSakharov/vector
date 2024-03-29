@@ -85,13 +85,13 @@ public:
         return length;
     }
 
-    Vector normalization(){
-        T* array = new T[_size];
+    Vector<double> normalization(){
+        double* array = new double[_size];
         size_t size = _size;
         for (int i = 0; i < _size; i++){
-            array[i] = _array[i] / this->findLength();
+            array[i] = static_cast<double>(_array[i]) / this->findLength();
         }
-        auto v = Vector(_size, array);
+        auto v = Vector<double>(_size, array);
         delete [] array;
         return v;
     }
